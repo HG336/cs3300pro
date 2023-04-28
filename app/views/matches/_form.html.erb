@@ -1,0 +1,42 @@
+<%= form_with(model: match) do |form| %>
+  <% if match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
+
+      <ul>
+        <% match.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class='container' style='text-align:center'>
+    <div class="field">
+      <%= form.label :opponent, :style => "font-size: 150%" %>
+      <br>
+      <%= form.text_field :opponent %>
+    </div>
+
+    <div class="field">
+      <%= form.label :score, :style => "font-size: 150%" %>
+      <br>
+      <%= form.number_field :score %>
+    </div>
+
+    <div class="field">
+      <%= form.label :location, :style => "font-size: 150%" %>
+      <br>
+      <%= form.text_area :location %>
+    </div>
+
+    <div class="field">
+      <%= form.label :notes, :style => "font-size: 150%" %>
+      <br>
+      <%= form.text_area :notes %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
